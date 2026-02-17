@@ -1,0 +1,611 @@
+/* RESET DE BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* STYLE GLOBAL */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #040714; /* bleu/noir Disney */
+    color: #ffffff;
+}
+
+/* HEADER (sera amélioré à l'étape 2) */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(4, 7, 20, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 1000;
+}
+
+/* LOGO */
+.logo img {
+    height: 50px; /* ajuste selon la taille souhaitée */
+    width: auto;
+    display: block;
+}
+
+/* Si tu veux que le lien ait toujours le même style que le texte avant */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img:hover {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+
+/* NAVIGATION */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.main-nav a:hover {
+    opacity: 0.7;
+}
+
+/* HERO PRINCIPAL (PAGE D'ACCUEIL) */
+.hero {
+    height: 100vh;
+    background-image: url("images/hero-bg.jpg"); /* image placeholder */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding-top: 70px; /* hauteur du header */
+}
+
+/* OVERLAY */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(4, 7, 20, 0.9),
+        rgba(4, 7, 20, 0.4),
+        rgba(4, 7, 20, 0.1)
+    );
+}
+
+/* CONTENU HERO (vide pour l’instant) */
+.hero-content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+}
+
+/* BURGER */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+.burger span {
+    display: block;
+    height: 3px;
+    width: 25px;
+    background: white;
+    border-radius: 2px;
+}
+
+/* MENU MOBILE */
+@media screen and (max-width: 768px) {
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: -100%; /* caché à gauche */
+        width: 250px;
+        height: 100%;
+        background: rgba(4,7,20,0.95);
+        flex-direction: column;
+        padding-top: 70px;
+        transition: left 0.3s ease;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 20px;
+        padding-left: 20px;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    /* Quand le menu est actif */
+    .main-nav.active {
+        left: 0;
+    }
+}
+
+.burger.toggle span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.burger.toggle span:nth-child(2) {
+    opacity: 0;
+}
+.burger.toggle span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.hero {
+    height: 100vh;
+    background-image: url("images/hero-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding-top: 70px;
+}
+
+@media screen and (max-width: 768px) {
+    .hero-content {
+        padding-left: 20px;
+        padding-right: 20px;
+        flex-direction: column;
+    }
+}
+
+/* HEADER STRUCTURE */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* NAVIGATION STYLE DISNEY */
+.main-nav a {
+    position: relative;
+    padding: 5px 0;
+}
+
+/* Effet underline élégant */
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #1f80e0;
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+/* ESPACE ET STYLE TEXTE DE BIENVENUE */
+.welcome {
+    margin: 0 20px; /* petit espace entre logo et menu */
+    white-space: nowrap;
+    overflow: hidden;
+    flex: 1; /* prend l’espace restant */
+    color: #FFD700; /* jaune doré */
+    font-weight: bold;
+    font-size: 1em;
+}
+
+/* TEXTE QUI DÉFILE */
+.welcome span {
+    display: inline-block;
+    padding-left: 100%; /* démarre hors écran à droite */
+    animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Pour mobile : réduire taille et padding */
+@media screen and (max-width: 768px) {
+    .welcome {
+        font-size: 0.85em;
+        margin: 0 10px;
+    }
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    height: 100vh;
+    background-image: url("images/hero-bg.jpg"); /* TON IMAGE PRINCIPALE */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+}
+
+/* Overlay sombre */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(4,7,20,0.9),
+        rgba(4,7,20,0.5),
+        rgba(4,7,20,0.1)
+    );
+}
+
+/* Contenu */
+.hero-content {
+    position: relative;
+    max-width: 600px;
+    z-index: 2;
+}
+
+/* Titre */
+.hero-text h1 {
+    font-size: 4em;
+    margin: 0 0 20px;
+    color: #ffffff;
+}
+
+/* Texte */
+.hero-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #d1d1d1;
+    margin-bottom: 30px;
+}
+
+/* Bouton */
+.hero-btn {
+    display: inline-block;
+    background: #ffffff;
+    color: #040714;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.hero-btn:hover {
+    transform: scale(1.05);
+    background: #e6e6e6;
+}
+
+/* Animation couleur H1 */
+@keyframes colorChange {
+    0% { color: #ffffff; }   /* blanc */
+    50% { color: #1E90FF; }  /* bleu */
+    100% { color: #ffffff; } /* blanc */
+}
+
+.hero-text h1 {
+    font-size: 4em;
+    margin: 0 0 20px;
+    color: #ffffff;
+    animation: colorChange 5s infinite;
+}
+
+/* HERO SECTION MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .hero {
+        height: 100vh;
+        padding-left: 20px; /* moins d’espace à gauche */
+        padding-right: 20px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 90%; /* prend presque toute la largeur */
+    }
+
+    .hero-text h1 {
+        font-size: 2.5em; /* plus petit sur mobile */
+    }
+
+    .hero-text p {
+        font-size: 1em;
+        line-height: 1.4;
+    }
+
+    .hero-btn {
+        padding: 12px 24px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-overlay {
+        background: linear-gradient(
+            to bottom,
+            rgba(4,7,20,0.9),
+            rgba(4,7,20,0.3)
+        );
+    }
+}
+
+.images-section {
+    padding: 60px 20px;
+    background-color: #0a0f2a; /* couleur de fond */
+    text-align: center;
+    scroll-margin-top: 80px; /* espace entre le haut de la section et le header */
+}
+
+.images-section h2 {
+    font-size: 2em;
+    color: #FFD700;
+    margin-bottom: 30px;
+}
+
+/* GRID DES IMAGES */
+.images-grid {
+    display: grid;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Ordinateur : 5 colonnes */
+@media screen and (min-width: 1025px) {
+    .images-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* Tablette : 5 colonnes */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .images-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* Mobile : 3 images pas parfaitement alignées */
+@media screen and (max-width: 768px) {
+    .images-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.images-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.images-grid img:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* BOUTON VOIR PLUS */
+.see-more {
+    margin-top: 20px;
+}
+
+.see-more a {
+    background-color: #FFD700;
+    color: #040714;
+    text-decoration: none;
+    padding: 10px 25px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+}
+
+.see-more a:hover {
+    opacity: 0.8;
+}
+
+/* LIGHTBOX */
+.lightbox {
+    display: none; /* caché par défaut */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.close:hover {
+    opacity: 0.7;
+}
+
+.videos-section {
+    padding: 60px 20px;
+    background-color: #0a0f2a;
+    text-align: center;
+    scroll-margin-top: 80px; /* espace entre le haut de la section et le header */
+}
+
+.videos-section h2 {
+    font-size: 2em;
+    color: #FFD700;
+    margin-bottom: 30px;
+}
+
+.videos-grid {
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Ordinateur : 3 colonnes */
+@media screen and (min-width: 1025px) {
+    .videos-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Tablette : 2 colonnes */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .videos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile : 1 colonne */
+@media screen and (max-width: 768px) {
+    .videos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.video-wrapper video:hover {
+    transform: scale(1.02);
+    opacity: 0.95;
+}
+
+/* BOUTON VOIR PLUS */
+.videos-section .see-more {
+    margin-top: 20px;
+}
+
+.videos-section .see-more a {
+    background-color: #FFD700;
+    color: #040714;
+    text-decoration: none;
+    padding: 10px 25px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+}
+
+.videos-section .see-more a:hover {
+    opacity: 0.8;
+}
+
+.artists-section {
+    padding: 60px 20px;
+    background-color: #0a0f2a;
+    text-align: center;
+    padding-top: calc(70px + 20px);
+}
+
+.artists-section h2 {
+    font-size: 2em;
+    color: #FFD700;
+    margin-bottom: 40px;
+    scroll-margin-top: 80px; /* espace entre le haut de la section et le header */
+}
+
+.artists-grid {
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Ordinateur : 5 colonnes */
+@media screen and (min-width: 1025px) {
+    .artists-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* Tablette : 3 colonnes */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .artists-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile : 2 colonnes */
+@media screen and (max-width: 768px) {
+    .artists-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.artist-card {
+    background-color: #1a1f45;
+    padding: 15px;
+    border-radius: 8px;
+    color: #fff;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artist-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.artist-card img {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.artist-card h3 {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+.artist-card .domain {
+    font-size: 0.9em;
+    color: #FFD700;
+    margin-bottom: 5px;
+}
+
+.artist-card .bio {
+    font-size: 0.85em;
+    margin-bottom: 5px;
+}
+
+.artist-card .message {
+    font-size: 0.85em;
+    font-style: italic;
+    color: #ccc;
+}
