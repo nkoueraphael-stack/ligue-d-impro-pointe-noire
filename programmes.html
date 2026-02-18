@@ -261,7 +261,17 @@ Contactez-nous pour rejoindre la ligue ou collaborer avec nous.
 
 </section>
 
+ <script>
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.main-nav');
 
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('active');
+
+        // animation du burger en X
+        burger.classList.toggle('toggle');
+    });
+</script>
 
 <footer>
 
@@ -285,6 +295,7 @@ document.getElementById("navLinks").classList.toggle("active");
 
 </body>
 </html>
+
 
 
 
