@@ -761,6 +761,60 @@ body {
 
 }
 
+/* HERO PAGE */
+.page-hero {
+
+padding-top: 120px;
+padding-bottom: 60px;
+
+background: #040714;
+
+text-align: center;
+color: white;
+
+}
+
+
+.page-hero h1 {
+
+font-size: 3em;
+margin-bottom: 10px;
+
+}
+
+
+.page-hero p {
+
+color: #ccc;
+
+}
+
+
+/* sections */
+.programme-section {
+
+padding: 60px 20px;
+
+max-width: 900px;
+margin: auto;
+
+}
+
+
+.programme-section h2 {
+
+margin-bottom: 15px;
+color: #007BFF;
+
+}
+
+
+.programme-section p {
+
+color: #444;
+
+}
+
 
 
 
