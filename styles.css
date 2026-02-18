@@ -160,15 +160,26 @@ body {
 }
 
 .hero-text h1 {
-    animation: colorChange 5s ease-in-out infinite;
+    font-size: 32px;
+    font-weight: bold;
+
+    animation-name: colorChange;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
 }
 
+/* Animation */
 @keyframes colorChange {
-    0%, 100% {
-        color: #007BFF; /* bleu */
+    0% {
+        color: blue;
     }
+
     50% {
-        color: #ffffff; /* blanc */
+        color: white;
+    }
+
+    100% {
+        color: blue;
     }
 }
 
@@ -757,6 +768,7 @@ body {
     text-align: center;
 
 }
+
 
 
 
