@@ -97,13 +97,19 @@ body {
 }
 
 /* titre */
-.hero-content h1 {
-    font-size: 4em;
-    color: #ffffff;
-    margin-bottom: 20px;
-    line-height: 1.2;
-    word-wrap: break-word;
+.hero-text h1 {
+    animation: colorChange 5s ease-in-out infinite;
 }
+
+@keyframes colorChange {
+    0%, 100% {
+        color: #007BFF; /* bleu */
+    }
+    50% {
+        color: #ffffff; /* blanc */
+    }
+}
+
 
 /* paragraphes */
 .hero-content p {
@@ -156,30 +162,6 @@ body {
     .hero-btn {
         padding: 10px 20px;
         font-size: 1em;
-    }
-}
-
-.hero-text h1 {
-    font-size: 32px;
-    font-weight: bold;
-
-    animation-name: colorChange;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-}
-
-/* Animation */
-@keyframes colorChange {
-    0% {
-        color: blue;
-    }
-
-    50% {
-        color: white;
-    }
-
-    100% {
-        color: blue;
     }
 }
 
@@ -768,6 +750,7 @@ body {
     text-align: center;
 
 }
+
 
 
 
