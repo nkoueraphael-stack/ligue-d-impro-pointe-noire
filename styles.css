@@ -66,9 +66,98 @@ body {
 }
 
 /* HERO PRINCIPAL (PAGE D'ACCUEIL) */
+/* HERO */
+.hero {
+    position: relative;
+    height: 100vh;
+    background-image: url("images/hero-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    padding-top: 100px; /* laisse de la place pour le header fixe */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
 
+/* overlay sombre */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(4,7,20,0.7);
+    z-index: 1;
+}
 
+/* contenu hero */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 0 20px;
+}
 
+/* titre */
+.hero-content h1 {
+    font-size: 4em;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    word-wrap: break-word;
+}
+
+/* paragraphes */
+.hero-content p {
+    color: #d1d1d1;
+    font-size: 1.1em;
+    line-height: 1.5em;
+    margin-bottom: 25px;
+}
+
+/* bouton */
+.hero-btn {
+    display: inline-block;
+    background-color: #FFD700;
+    color: #040714;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.hero-btn:hover {
+    transform: scale(1.05);
+    background-color: #e6c200;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 80px; /* espace pour header */
+        text-align: center;
+        height: auto;
+        padding-bottom: 40px;
+        display: block;
+    }
+
+    .hero-content {
+        max-width: 90%;
+        margin: auto;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .hero-btn {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
 
 
 /* BURGER */
@@ -656,4 +745,5 @@ body {
     text-align: center;
 
 }
+
 
