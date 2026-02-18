@@ -169,6 +169,18 @@ body {
     }
 }
 
+/* CENTRAGE HERO POUR MOBILE */
+@media screen and (max-width: 768px) {
+    .hero-content {
+        padding-left: 20px; /* réduit le padding */
+        padding-right: 20px;
+        justify-content: center; /* centre horizontalement */
+        text-align: center; /* centre le texte */
+        flex-direction: column; /* empile H1 et paragraphe */
+        align-items: center; /* centre verticalement si nécessaire */
+    }
+}
+
 /* HEADER STRUCTURE */
 .header-left {
     display: flex;
@@ -813,4 +825,5 @@ body {
     text-align: center;
 
 }
+
 
