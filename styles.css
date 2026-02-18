@@ -93,8 +93,19 @@ body {
     position: relative;
     height: 100%;
     display: flex;
-    align-items: center;
-    padding-left: 80px;
+    flex-direction: column; /* met tout en colonne par défaut */
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 20px; /* espace à gauche */
+    padding-right: 20px;
+}
+
+/* TEXTE HERO */
+.hero-content h1,
+.hero-content p {
+    color: white;
+    margin-bottom: 15px;
+    word-wrap: break-word;
 }
 
 /* BURGER */
@@ -161,16 +172,19 @@ body {
     padding-top: 70px;
 }
 
-/* CENTRAGE HERO POUR MOBILE */
-@media screen and (max-width: 768px) {
+/* MOBILE : forcer retour à la ligne si trop large */
+@media (max-width: 768px) {
     .hero-content {
-        padding-left: 20px; /* réduit le padding */
-        padding-right: 20px;
-        justify-content: center; /* centre horizontalement */
-        text-align: center; /* centre le texte */
-        flex-direction: column; /* empile H1 et paragraphe */
-        align-items: center; /* centre verticalement si nécessaire */
-        height: calc(100vh - 70px); /* 100% de la fenêtre moins le header */
+        padding-left: 15px;
+        padding-right: 15px;
+        align-items: flex-start;
+    }
+
+    .hero-content h1,
+    .hero-content p {
+        font-size: 1.8em; /* ajuster taille texte */
+        line-height: 1.3em;
+        white-space: normal; /* permet retour à la ligne */
     }
 }
 }
@@ -819,6 +833,7 @@ body {
     text-align: center;
 
 }
+
 
 
 
