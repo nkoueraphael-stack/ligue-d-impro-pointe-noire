@@ -97,19 +97,13 @@ body {
 }
 
 /* titre */
-hero-content h1  {
-    animation: colorChange 5s ease-in-out infinite;
+.hero-content h1 {
+    font-size: 4em;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    word-wrap: break-word;
 }
-
-@keyframes colorChange {
-    0%, 100% {
-        color: #007BFF; /* bleu */
-    }
-    50% {
-        color: #ffffff; /* blanc */
-    }
-}
-
 
 /* paragraphes */
 .hero-content p {
@@ -750,6 +744,7 @@ hero-content h1  {
     text-align: center;
 
 }
+
 
 
 
