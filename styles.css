@@ -99,10 +99,26 @@ body {
 /* titre */
 .hero-content h1 {
     font-size: 4em;
-    color: #ffffff;
     margin-bottom: 20px;
     line-height: 1.2;
     word-wrap: break-word;
+
+    animation: colorChange 5s ease-in-out infinite;
+}
+
+/* animation couleur */
+@keyframes colorChange {
+    0% {
+        color: #007BFF; /* bleu */
+    }
+
+    50% {
+        color: #ffffff; /* blanc */
+    }
+
+    100% {
+        color: #007BFF; /* bleu */
+    }
 }
 
 /* paragraphes */
@@ -744,6 +760,7 @@ body {
     text-align: center;
 
 }
+
 
 
 
