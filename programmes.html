@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Programmes | Ligue d'Impro Pointe-Noire</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* NAVBAR */
+header{
+    background:#040714;
+    padding:15px 40px;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:#ffffff;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.nav-links{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    color:#ffffff;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#1E90FF;
+}
+
+/* PAGE TITLE */
+
+.page-header{
+    background:#1E90FF;
+    color:white;
+    padding:60px 20px;
+    text-align:center;
+}
+
+.page-header h1{
+    font-size:40px;
+}
+
+/* PROGRAMMES SECTION */
+
+.programmes{
+    padding:60px 20px;
+    max-width:1000px;
+    margin:auto;
+}
+
+.programme-card{
+    background:#f4f4f4;
+    padding:25px;
+    margin-bottom:20px;
+    border-radius:10px;
+}
+
+.programme-card h2{
+    margin-bottom:10px;
+    color:#040714;
+}
+
+.programme-card p{
+    color:#333;
+}
+
+/* FOOTER */
+
+footer{
+    background:#040714;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.nav-links{
+    flex-direction:column;
+    background:#040714;
+    position:absolute;
+    right:0;
+    top:60px;
+    width:200px;
+    display:none;
+}
+
+.nav-links.active{
+    display:flex;
+}
+
+.menu-toggle{
+    display:block;
+    color:white;
+    font-size:28px;
+    cursor:pointer;
+}
+
+}
+
+.menu-toggle{
+display:none;
+}
+
+    </style>
+
+</head>
+<body>
+
+
+<!-- NAVBAR -->
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">
+LIGUE IMPRO
+</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">
+?
+</div>
+
+<ul class="nav-links" id="navLinks">
+
+<li><a href="index.html">Accueil</a></li>
+
+<li><a href="spectacles.html">Spectacles</a></li>
+
+<li><a href="evenements.html">Evenements</a></li>
+
+<li><a href="entrainements.html">Entrainements</a></li>
+
+<li><a href="historique.html">Historique</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</div>
+
+</header>
+
+
+<!-- HEADER -->
+
+<section class="page-header">
+
+<h1>Nos Programmes</h1>
+
+</section>
+
+
+
+<!-- PROGRAMMES -->
+
+<section class="programmes">
+
+
+<div class="programme-card">
+
+<h2>Spectacles</h2>
+
+<p>
+
+Découvrez nos spectacles d’improvisation ouverts au public.
+
+Une expérience unique remplie d’émotions et de surprises.
+
+</p>
+
+</div>
+
+
+<div class="programme-card">
+
+<h2>Evenements</h2>
+
+<p>
+
+Participez à nos événements spéciaux, festivals et rencontres artistiques.
+
+</p>
+
+</div>
+
+
+<div class="programme-card">
+
+<h2>Entrainements</h2>
+
+<p>
+
+Nos sessions d’entrainement permettent aux acteurs de développer leur talent.
+
+</p>
+
+</div>
+
+
+<div class="programme-card">
+
+<h2>Historique</h2>
+
+<p>
+
+Découvrez l’histoire de la Ligue d’Impro Pointe-Noire depuis sa création.
+
+</p>
+
+</div>
+
+
+<div class="programme-card">
+
+<h2>Contact</h2>
+
+<p>
+
+Contactez-nous pour rejoindre la ligue ou collaborer avec nous.
+
+</p>
+
+</div>
+
+
+</section>
+
+
+
+<footer>
+
+© 2026 Ligue d’Impro Pointe-Noire
+
+</footer>
+
+
+
+<script>
+
+function toggleMenu(){
+
+document.getElementById("navLinks").classList.toggle("active");
+
+}
+
+</script>
+
+
+
+</body>
+</html>
