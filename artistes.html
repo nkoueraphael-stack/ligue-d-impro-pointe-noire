@@ -13,6 +13,13 @@
         <a href="index.html" class="logo">
             <img src="images/logo.jpg" alt="TIME BELVEDERE Logo">
         </a>
+        <!-- Bouton burger pour mobile -->
+    <div class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
         <nav class="main-nav">
             <ul>
                 <li><a href="index.html#accueil">Accueil</a></li>
@@ -95,6 +102,19 @@
 
         </div>
     </section>
+    
+     <script>
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.main-nav');
+
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('active');
+
+        // animation du burger en X
+        burger.classList.toggle('toggle');
+    });
+</script>
+
 <footer class="main-footer">
 
     <div class="footer-container">
