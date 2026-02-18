@@ -178,6 +178,7 @@ body {
         text-align: center; /* centre le texte */
         flex-direction: column; /* empile H1 et paragraphe */
         align-items: center; /* centre verticalement si nécessaire */
+        height: calc(100vh - 70px); /* 100% de la fenêtre moins le header */
     }
 }
 
@@ -825,5 +826,6 @@ body {
     text-align: center;
 
 }
+
 
 
