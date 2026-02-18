@@ -97,7 +97,7 @@ body {
 }
 
 /* titre */
-.hero-text h1 {
+hero-content h1  {
     animation: colorChange 5s ease-in-out infinite;
 }
 
@@ -750,6 +750,7 @@ body {
     text-align: center;
 
 }
+
 
 
 
