@@ -208,15 +208,31 @@ body {
 
 /* HERO SECTION */
 .hero {
-    position: relative;
     height: 100vh;
-    background-image: url("images/hero-bg.jpg"); /* TON IMAGE PRINCIPALE */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    padding-left: 80px;
+    background-image: url("images/hero-bg.jpg");
+    background-size: cover; /* couvre tout l'espace */
+    background-position: center top; /* centre horizontal, top vertical */
+    background-repeat: no-repeat;
+    position: relative;
+    padding-top: 100px; /* espace pour header fixe */
 }
+
+/* MOBILE : ajustement */
+@media (max-width: 768px) {
+    .hero {
+        background-position: center center; /* centré pour mobile */
+        background-size: cover;
+    }
+}
+
+/* TABLETTE */
+@media (max-width: 1024px) {
+    .hero {
+        background-position: center center;
+        background-size: cover;
+    }
+}
+
 
 /* Overlay sombre */
 .hero-overlay {
@@ -793,7 +809,6 @@ body {
 
 .hero {
     height: 100vh;
-    background-image: url("images/hero-bg.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
@@ -875,6 +890,7 @@ body {
         font-size: 1em;
     }
 }
+
 
 
 
