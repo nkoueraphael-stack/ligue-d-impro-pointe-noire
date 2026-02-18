@@ -609,3 +609,208 @@ body {
     font-style: italic;
     color: #ccc;
 }
+
+.contact-section {
+
+    padding: 90px 20px;
+    background-color: #040714;
+    color: white;
+    text-align: center;
+
+}
+
+
+.contact-section h2 {
+
+    font-size: 2em;
+    margin-bottom: 40px;
+    color: #FFD700;
+
+}
+
+
+/* CONTAINER */
+
+.contact-container {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1000px;
+    margin: auto;
+
+}
+
+
+/* INFO */
+
+.contact-info {
+
+    text-align: left;
+
+}
+
+
+/* FORM */
+
+.contact-form {
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+
+.contact-form input,
+.contact-form textarea {
+
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+
+}
+
+
+.contact-form button {
+
+    background-color: #FFD700;
+    color: black;
+    border: none;
+    padding: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+
+.contact-form button:hover {
+
+    background-color: #e6c200;
+
+}
+
+
+/* TABLETTE */
+
+@media (max-width: 1024px) {
+
+.contact-container {
+
+    grid-template-columns: 1fr;
+
+}
+
+}
+
+
+/* TELEPHONE */
+
+@media (max-width: 768px) {
+
+.contact-container {
+
+    grid-template-columns: 1fr;
+
+}
+
+}
+
+/* FOOTER */
+
+.main-footer {
+
+    background-color: #020617;
+    color: white;
+    margin-top: 80px;
+
+}
+
+
+/* CONTAINER */
+
+.footer-container {
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+
+    padding: 40px;
+
+}
+
+
+/* LOGO */
+
+.footer-logo img {
+
+    height: 50px;
+    margin-bottom: 10px;
+
+}
+
+
+/* TITRES */
+
+.footer-container h3 {
+
+    margin-bottom: 15px;
+    color: #FFD700;
+
+}
+
+
+/* LIENS */
+
+.footer-container a {
+
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+
+}
+
+.footer-container a:hover {
+
+    color: #FFD700;
+
+}
+
+
+/* COPYRIGHT */
+
+.footer-bottom {
+
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    font-size: 14px;
+
+}
+
+
+/* TABLETTE */
+
+@media (max-width: 1024px) {
+
+.footer-container {
+
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+}
+
+
+/* TELEPHONE */
+
+@media (max-width: 768px) {
+
+.footer-container {
+
+    grid-template-columns: 1fr;
+    text-align: center;
+
+}
+
