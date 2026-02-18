@@ -159,7 +159,19 @@ body {
     }
 }
 
+/* Animation couleur H1 */
+@keyframes colorChange {
+    0% { color: #ffffff; }   /* blanc */
+    50% { color: #1E90FF; }  /* bleu */
+    100% { color: #ffffff; } /* blanc */
+}
 
+.hero-text h1 {
+    font-size: 4em;
+    margin: 0 0 20px;
+    color: #ffffff;
+    animation: colorChange 5s infinite;
+}
 /* BURGER */
 .burger {
     display: none;
@@ -745,5 +757,6 @@ body {
     text-align: center;
 
 }
+
 
 
