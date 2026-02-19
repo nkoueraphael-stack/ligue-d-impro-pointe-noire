@@ -188,7 +188,8 @@
 
 
         <!-- FORMULAIRE -->
-<form class="contact-form" action="https://formspree.io/f/mnqvwjky" method="POST">
+<!-- FORMULAIRE -->
+<form class="contact-form" action="https://formspree.io/f/mqeddzar" method="POST">
     
     <input type="text" name="name" placeholder="Votre nom" required>
     
@@ -201,32 +202,16 @@
     <button type="submit">Envoyer</button>
 </form>
 
-
     </div>
 
 </section>
 
-   <script>
+  <script>
 document.querySelector('.contact-form').addEventListener('submit', function(e) {
-    e.preventDefault(); // Empêche le rechargement
-    const form = e.target;
-    
-    fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-    }).then(response => {
-        if (response.ok) {
-            alert("Merci ! Votre message a été envoyé.");
-            form.reset();
-        } else {
-            alert("Oops ! Une erreur est survenue.");
-        }
-    }).catch(error => {
-        alert("Erreur réseau, réessaye plus tard.");
-    });
+    alert("Merci ! Votre message a été envoyé.");
 });
 </script>
+
 
 
 <footer class="main-footer">
@@ -285,6 +270,7 @@ document.querySelector('.contact-form').addEventListener('submit', function(e) {
 
 </body>
 </html>
+
 
 
 
