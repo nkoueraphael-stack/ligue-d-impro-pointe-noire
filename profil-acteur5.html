@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profil Acteur | Nom Acteur</title>
+
+<style>
+/* RESET */
+*{ margin:0; padding:0; box-sizing:border-box; font-family: Arial, Helvetica, sans-serif; }
+
+/* HEADER NAV */
+header{
+    background:#040714; padding:15px 40px;
+}
+.navbar{ display:flex; justify-content:space-between; align-items:center; }
+.logo{ color:white; font-size:22px; font-weight:bold; }
+.nav-links{ list-style:none; display:flex; gap:25px; }
+.nav-links a{ color:white; text-decoration:none; font-weight:bold; transition:0.3s; }
+.nav-links a:hover{ color:#1E90FF; }
+.menu-toggle{ display:none; cursor:pointer; color:white; font-size:28px; }
+
+/* PROFIL ACTEUR */
+.profile-header{
+    background:#1E90FF; color:white; text-align:center; padding:50px 20px;
+}
+.profile-header img{
+    width:150px; height:150px; border-radius:50%; object-fit:cover; margin-bottom:15px; border:4px solid white;
+}
+.profile-header h1{ font-size:32px; margin-bottom:5px; }
+.profile-header h3{ font-size:18px; color:#ffd700; margin-bottom:15px; }
+.profile-header p{ font-size:16px; max-width:700px; margin:auto; line-height:1.6; }
+
+/* SECTIONS DE PUBLICATIONS */
+.sections{ max-width:1000px; margin:40px auto; padding:0 20px; }
+.section{
+    margin-bottom:50px;
+}
+.section h2{ font-size:24px; margin-bottom:15px; color:#1E90FF; border-bottom:2px solid #1E90FF; display:inline-block; padding-bottom:5px; }
+.section-content{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+/* IMAGE CARDS */
+.card{
+    background:#f4f4f4;
+    padding:10px;
+    border-radius:10px;
+    flex:1 1 calc(33% - 20px);
+    min-width:250px;
+    text-align:center;
+}
+.card img{ width:100%; border-radius:10px; object-fit:cover; cursor:pointer; }
+.card p{ margin-top:8px; font-size:14px; color:#333; }
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .nav-links{ flex-direction:column; display:none; position:absolute; right:0; top:60px; background:#040714; width:200px; }
+    .nav-links.active{ display:flex; }
+    .menu-toggle{ display:block; }
+    .section-content{ flex-direction:column; }
+    .card{ flex:1 1 100%; }
+}
+</style>
+
+</head>
+<body>
+
+<header>
+<div class="navbar">
+    <div class="logo">LIGUE IMPRO</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="programmes.html">Programmes</a></li>
+        <li><a href="artistes.html">Artistes</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</div>
+</header>
+
+<!-- PROFIL ACTEUR -->
+<section class="profile-header">
+    <img src="images/acteur1.jpg" alt="Nom Acteur">
+    <h1>Nom Acteur</h1>
+    <h3>Acteur / Rappeur</h3>
+    <p>Biographie courte de l'acteur. "Petit message à partager pour inspirer et motiver le public."</p>
+</section>
+
+<!-- PUBLICATIONS -->
+<section class="sections">
+
+<!-- IMAGES -->
+<div class="section">
+    <h2>Images</h2>
+    <div class="section-content">
+        <div class="card">
+            <img src="images/photo1.jpg" alt="Photo 1">
+            <p>Description de l'image 1</p>
+        </div>
+        <div class="card">
+            <img src="images/photo2.jpg" alt="Photo 2">
+            <p>Description de l'image 2</p>
+        </div>
+    </div>
+</div>
+
+<!-- VIDEOS -->
+<div class="section">
+    <h2>Vidéos</h2>
+    <div class="section-content">
+        <div class="card">
+            <video width="100%" controls>
+                <source src="videos/video1.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la vidéo.
+            </video>
+            <p>Description vidéo 1</p>
+        </div>
+    </div>
+</div>
+
+<!-- MONOLOGUES -->
+<div class="section">
+    <h2>Monologues</h2>
+    <div class="section-content">
+        <div class="card">
+            <p>"Texte du monologue 1"</p>
+        </div>
+    </div>
+</div>
+
+<!-- ANECDOTES -->
+<div class="section">
+    <h2>Anecdotes</h2>
+    <div class="section-content">
+        <div class="card">
+            <p>"Petite anecdote ou histoire drôle à partager."</p>
+        </div>
+    </div>
+</div>
+
+<!-- DOCUMENTS -->
+<div class="section">
+    <h2>Documents</h2>
+    <div class="section-content">
+        <div class="card">
+            <a href="documents/doc1.pdf" target="_blank">
+                <img src="images/doc-affiche1.jpg" alt="Document 1">
+            </a>
+            <p>Description du document 1</p>
+        </div>
+    </div>
+</div>
+
+</section>
+
+<footer style="background:#040714;color:white;text-align:center;padding:20px;">
+© 2026 Ligue d’Impro Pointe-Noire
+</footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
