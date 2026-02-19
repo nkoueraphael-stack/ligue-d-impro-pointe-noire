@@ -188,25 +188,30 @@
 
 
         <!-- FORMULAIRE -->
-<!-- modify this form HTML and place wherever you want your form -->
-<form
-  action="https://formspree.io/f/mqeddzar"
-  method="POST"
->
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
+<!-- FORMULAIRE -->
+<form class="contact-form" action="https://formspree.io/f/TON_ID_FORM" method="POST">
+    
+    <input type="text" name="name" placeholder="Votre nom" required>
+    
+    <input type="email" name="email" placeholder="Votre email" required>
+    
+    <input type="text" name="subject" placeholder="Sujet">
+    
+    <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
+    
+    <button type="submit">Envoyer</button>
 </form>
+
+
     </div>
 
 </section>
+
+    <script>
+document.querySelector('.contact-form').addEventListener('submit', function(e) {
+    alert("Merci ! Votre message a été envoyé.");
+});
+</script>
 
 <footer class="main-footer">
 
@@ -264,6 +269,7 @@
 
 </body>
 </html>
+
 
 
 
