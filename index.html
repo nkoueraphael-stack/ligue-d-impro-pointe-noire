@@ -188,19 +188,14 @@
 
 
         <!-- FORMULAIRE -->
-        <form class="contact-form">
-
-            <input type="text" placeholder="Votre nom" required>
-
-            <input type="email" placeholder="Votre email" required>
-
-            <input type="text" placeholder="Sujet">
-
-            <textarea placeholder="Votre message" rows="5" required></textarea>
-
-            <button type="submit">Envoyer</button>
-
-        </form>
+<form class="contact-form" id="contactForm">
+    <input type="text" name="name" placeholder="Votre nom" required>
+    <input type="email" name="email" placeholder="Votre email" required>
+    <input type="text" name="subject" placeholder="Sujet">
+    <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
+    <button type="submit">Envoyer</button>
+    <p id="formMessage" style="margin-top:10px;"></p>
+</form>
 
 
     </div>
@@ -229,6 +224,31 @@
                 <li><a href="#">Programmes</a></li>
             </ul>
         </div>
+
+        <script>
+const form = document.getElementById('contactForm');
+const formMessage = document.getElementById('formMessage');
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault(); // Empêche le rechargement de la page
+
+    const formData = new FormData(form);
+
+    fetch('send_mail.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        formMessage.textContent = data; // Affiche le message de confirmation
+        form.reset(); // Réinitialise le formulaire
+    })
+    .catch(error => {
+        formMessage.textContent = "Erreur lors de l'envoi. Réessayez plus tard.";
+        console.error(error);
+    });
+});
+</script>
 
 
         <!-- CONTACT -->
@@ -264,6 +284,7 @@
 
 </body>
 </html>
+
 
 
 
