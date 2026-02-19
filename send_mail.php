@@ -1,6 +1,6 @@
 <?php
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-    $to = "tonemail@example.com"; // <-- Remplace par ton e-mail
+    $to = "liguedimpropointenoire@gmail.com"; // <-- Remplace par ton e-mail
 
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
@@ -12,11 +12,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $headers = "From: $email";
 
     if(mail($to, $subject, $message, $headers)) {
-        echo "Merci $name, votre message a été envoyé avec succès !";
+        echo "Merci $name, votre message a Ã©tÃ© envoyÃ© avec succÃ¨s !";
     } else {
-        echo "Erreur : le message n'a pas pu être envoyé.";
+        echo "Erreur : le message n'a pas pu Ãªtre envoyÃ©.";
     }
 } else {
-    echo "Accès interdit.";
+    echo "AccÃ¨s interdit.";
 }
 ?>
+
