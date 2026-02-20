@@ -538,6 +538,7 @@ body {
 .artist-card h3 {
     margin: 5px 0;
     font-size: 1.1em;
+    color:#ffffff
 }
 
 .artist-card .domain {
@@ -814,6 +815,7 @@ color: #007BFF;
 color: #444;
 
 }
+
 
 
 
