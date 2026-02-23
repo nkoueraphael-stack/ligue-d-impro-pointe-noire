@@ -57,11 +57,37 @@ header{
 
 /* RESPONSIVE */
 @media(max-width:768px){
-    .nav-links{ flex-direction:column; display:none; position:absolute; right:0; top:60px; background:#040714; width:200px; }
-    .nav-links.active{ display:flex; }
-    .menu-toggle{ display:block; }
-    .section-content{ flex-direction:column; }
-    .card{ flex:1 1 100%; }
+
+.nav-links{
+    flex-direction:column;
+    display:none;
+    position:absolute;
+    right:0;
+    top:60px;
+    background:#040714;
+    width:200px;
+}
+
+.nav-links.active{
+    display:flex;
+}
+
+.menu-toggle{
+    display:block;
+}
+
+/* ⭐ IMPORTANT : 2 images par ligne */
+.section-content{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.card{
+    flex:1 1 calc(50% - 10px);
+    min-width:auto;
+}
+
 }
 </style>
 
@@ -203,6 +229,7 @@ function toggleMenu(){
 
 </body>
 </html>
+
 
 
 
