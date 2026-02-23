@@ -85,11 +85,6 @@
     </div>
 </section>
 
-<!-- LIGHTBOX -->
-<div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-img" src="">
-</div>
 
 <section id="videos" class="videos-section">
     <h2>Galerie de vidéos</h2>
@@ -145,32 +140,7 @@
     });
 </script>
 
-<script>
-    const images = document.querySelectorAll('.images-grid img');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.querySelector('.lightbox-img');
-    const closeBtn = document.querySelector('.close');
 
-    images.forEach(img => {
-        img.addEventListener('click', () => {
-            lightbox.style.display = 'flex';
-            lightboxImg.src = img.src;
-        });
-    });
-
-    closeBtn.addEventListener('click', () => {
-        lightbox.style.display = 'none';
-        lightboxImg.src = '';
-    });
-
-    // Fermer en cliquant en dehors de l'image
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
-            lightbox.style.display = 'none';
-            lightboxImg.src = '';
-        }
-    });
-</script>
 
 <section id="contact" class="contact-section">
 
@@ -194,6 +164,76 @@
 
         </div>
 
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <span class="lightbox-btn prev">&#10094;</span>
+    <img class="lightbox-img" src="">
+    <span class="lightbox-btn next">&#10095;</span>
+</div>
+
+<script>
+const images = document.querySelectorAll('.images-grid img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.querySelector('.lightbox-img');
+const closeBtn = document.querySelector('.close');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+
+let currentIndex = 0;
+
+function showLightbox(index) {
+    currentIndex = index;
+    lightbox.style.display = 'flex';
+    lightboxImg.src = images[currentIndex].src;
+}
+
+images.forEach((img, index) => {
+    img.addEventListener('click', () => showLightbox(index));
+});
+
+closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
+
+// Cliquer en dehors de l'image
+lightbox.addEventListener('click', e => {
+    if(e.target === lightbox) lightbox.style.display = 'none';
+});
+
+// Navigation
+prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+});
+
+nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+});
+
+// Swipe mobile
+let touchStartX = 0;
+let touchEndX = 0;
+
+lightboxImg.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+});
+
+lightboxImg.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleGesture();
+});
+
+function handleGesture() {
+    if (touchEndX < touchStartX - 30) { // swipe gauche
+        nextBtn.click();
+    }
+    if (touchEndX > touchStartX + 30) { // swipe droite
+        prevBtn.click();
+    }
+}
+</script>
 
 
         <!-- FORMULAIRE -->
@@ -279,6 +319,7 @@ document.querySelector('.contact-form').addEventListener('submit', function(e) {
 
 </body>
 </html>
+
 
 
 
